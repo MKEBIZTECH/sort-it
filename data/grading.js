@@ -87,6 +87,12 @@ const SUMMARIES = {
     sorting:    "Artist workflows have two distinct layers: the business side (invoicing, scheduling, licensing) which is highly automatable, and the creative and relational side which requires genuine judgment. Separate those two layers first.",
     start:      "Start with the most administrative part of your practice — invoicing, file delivery, inquiry responses — and run it through SI Flow Finder. The business side of creative work is full of automation opportunities.",
   },
+  cybersecurity: {
+    fluent:     "You're cutting through security theater and reading the real logic underneath. You understand that critical doesn't mean needs AI, many of the highest stakes security processes are exactly where you want predictable, rule based automation.",
+    developing: "You're getting the standard cases right. The harder ones likely involve processes that look automatic because they're fast and rule bound, when real judgment about intent or risk is actually happening underneath.",
+    sorting:    "Security scenarios are tricky because urgency and stakes can make a process feel like it needs intelligence, when it's actually a fast, fixed rule. The agent cases are where genuine interpretation of intent or context is required.",
+    start:      "Start with SI Flow Finder. Pick a security process you handle regularly, access requests, alert triage, credential rotation, and run it through the framework. Security has very clear automation wins once you separate the rule based from the judgment based.",
+  },
 }
 
 // Bucket-specific miss patterns

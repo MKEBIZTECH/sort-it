@@ -11,6 +11,7 @@ export const CATEGORIES = [
   { id: 'healthcare',    label: 'Healthcare',      emoji: '🏥', description: 'Admin, scheduling, records, office workflows' },
   { id: 'web3',          label: 'Web3',            emoji: '⛓️', description: 'DAOs, smart contracts, token workflows, on-chain ops' },
   { id: 'arts',          label: 'Arts',            emoji: '🎨', description: 'Creative workflows, business side, client management' },
+  { id: 'cybersecurity', label: 'Cybersecurity',   emoji: '🔒', description: 'Threat detection, incident response, access control, security ops' },
 ]
 
 export const SCENARIOS = {
@@ -858,6 +859,100 @@ export const SCENARIOS = {
       scenario: "An AI helps you price commission work by analyzing your time estimates, material costs, comparable market rates, and the specific client relationship — then suggesting a price range and explaining the reasoning.",
       answer: 'agent',
       explanation: "Pricing creative work involves multiple factors that interact differently for each commission, especially the 'client relationship' variable. Synthesizing these into a reasoned price range is judgment-based."
+    },
+  ],
+
+  // ── CYBERSECURITY ──────────────────────────────────────────────────────────
+  cybersecurity: [
+    {
+      id: 'cy1', difficulty: 'easy',
+      scenario: "When your firewall detects a connection attempt from an IP address on your blocklist, it automatically drops the connection and logs the attempt with a timestamp.",
+      answer: 'automation',
+      explanation: "IP match against a defined list, fixed action of drop and log. No judgment involved. Classic firewall rule automation."
+    },
+    {
+      id: 'cy2', difficulty: 'easy',
+      scenario: "Your system automatically forces a password reset for any account that hasn't changed its password in 90 days, per your defined security policy.",
+      answer: 'automation',
+      explanation: "Date threshold leads to fixed action. The policy is set; the system enforces it consistently for every account. No judgment required."
+    },
+    {
+      id: 'cy3', difficulty: 'easy',
+      scenario: "Your security team wants AI to handle incident response decisions, but you don't have a documented incident response plan and the last three incidents were each handled completely differently.",
+      answer: 'not_ready',
+      explanation: "Inconsistent human handling of incidents means the process isn't defined. Document your incident response plan first, then automation or AI has something to apply."
+    },
+    {
+      id: 'cy4', difficulty: 'easy',
+      scenario: "An AI reviews flagged login attempts, considers the user's typical behavior, location, and device history, and decides whether to allow, challenge with MFA, or block the attempt.",
+      answer: 'agent',
+      explanation: "Weighing multiple contextual signals like behavior, location, and device to make a risk judgment requires reasoning, not a fixed rule. That's adaptive authentication, an agent's job."
+    },
+    {
+      id: 'cy5', difficulty: 'medium',
+      scenario: "Your system automatically quarantines any email attachment that matches a known malware hash from your threat intelligence feed.",
+      answer: 'automation',
+      explanation: "Hash match against a known list leads to fixed action. Even though it's security critical, the logic is deterministic, no interpretation needed."
+    },
+    {
+      id: 'cy6', difficulty: 'medium',
+      scenario: "An AI reads incoming phishing reports submitted by employees, determines whether each one is a genuine threat or a false positive, and escalates real threats to the security team with a risk summary.",
+      answer: 'agent',
+      explanation: "Distinguishing real phishing from false positives requires reading intent and context in the reported email, not just matching known signatures. That's interpretive judgment."
+    },
+    {
+      id: 'cy7', difficulty: 'medium',
+      scenario: "Your vulnerability scanner automatically runs every Sunday at midnight against all production servers and emails a report of newly discovered CVEs to the security team.",
+      answer: 'automation',
+      explanation: "Scheduled trigger, fixed scan, fixed report format. The humans interpret the CVEs, the system just runs the scan and delivers the data."
+    },
+    {
+      id: 'cy8', difficulty: 'medium',
+      scenario: "Your company wants AI to set access permission policies, but different department heads have wildly different ideas about who should have access to what, and there's no approved access control policy yet.",
+      answer: 'not_ready',
+      explanation: "Conflicting, undefined access criteria can't be automated or delegated to AI. Get department heads aligned on an access control policy first."
+    },
+    {
+      id: 'cy9', difficulty: 'medium',
+      scenario: "An AI monitors network traffic, correlates patterns across multiple data sources, and determines whether unusual activity represents a likely breach in progress, then decides whether to trigger an automatic lockdown.",
+      answer: 'agent',
+      explanation: "Correlating multiple data sources and judging likelihood of an active breach requires nuanced reasoning under uncertainty, not a simple threshold check."
+    },
+    {
+      id: 'cy10', difficulty: 'medium',
+      scenario: "Your system automatically disables any employee account the moment HR marks them as terminated in the HR system, revoking all access within seconds.",
+      answer: 'automation',
+      explanation: "Termination event leads to fixed access revocation. The trigger and action are both clearly defined. No judgment, speed and consistency are the whole point here."
+    },
+    {
+      id: 'cy11', difficulty: 'hard',
+      scenario: "Your system automatically locks an account after 5 failed login attempts within 10 minutes, and sends a notification to the account owner.",
+      answer: 'automation',
+      explanation: "Tricky because it feels protective and smart, but the logic is a simple counter and threshold. 5 failures in 10 minutes leads to lock plus notify. No judgment about intent."
+    },
+    {
+      id: 'cy12', difficulty: 'hard',
+      scenario: "An AI reviews your codebase for hardcoded secrets, API keys, and credentials before each deployment, explains the risk of each finding in context, and recommends whether the deploy should be blocked.",
+      answer: 'agent',
+      explanation: "Finding patterns that look like secrets could be regex based, but explaining risk in context and recommending a block or allow decision requires judgment about severity and exploitability, not just pattern matching."
+    },
+    {
+      id: 'cy13', difficulty: 'hard',
+      scenario: "Your SOC wants to automate threat hunting, but analysts each use different methodologies, document findings inconsistently, and there's significant disagreement about what counts as a true positive.",
+      answer: 'not_ready',
+      explanation: "Inconsistent methodology and disputed definitions mean threat hunting isn't standardized yet. Align on what counts as a true positive and document the methodology before adding automation or AI."
+    },
+    {
+      id: 'cy14', difficulty: 'hard',
+      scenario: "Your system automatically rotates all database credentials every 30 days, updates them across all connected services, and verifies each service reconnects successfully before considering the rotation complete.",
+      answer: 'automation',
+      explanation: "Complex multi step sequence, but every step is predetermined: rotate, update, verify, confirm. No judgment calls, just a more elaborate fixed procedure. Sophisticated automation."
+    },
+    {
+      id: 'cy15', difficulty: 'hard',
+      scenario: "An AI investigates a security alert by pulling logs from multiple systems, forming a hypothesis about what happened, checking that hypothesis against additional evidence, and writing an incident summary with a recommended remediation.",
+      answer: 'agent',
+      explanation: "Forming and testing a hypothesis across multiple evidence sources, then synthesizing a reasoned summary, this is investigative reasoning, the core of what makes something agentic rather than automated."
     },
   ],
 
